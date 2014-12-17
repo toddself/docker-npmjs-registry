@@ -1,0 +1,10 @@
+couchdb:
+  build: couch
+  volumes:
+    - $HOME/couch:/usr/local/var/lib/couchdb
+npmjs:
+  build: npmjs
+  links:
+    - couchdb
+  ports:
+    - "9876:9876"
